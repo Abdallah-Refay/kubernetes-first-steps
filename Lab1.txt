@@ -1,0 +1,4 @@
+4-ImagePullBackOff
+5-running
+6- 0
+9- 0

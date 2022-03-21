@@ -1,0 +1,22 @@
+13- 1 deployment 
+    3 replicas 
+
+14- 0
+15- nginx pods are ready
+16- RollingUpdate
+17- kubectl rollout undo deployment/nginx-deployment --to-revision=1
+
+-------
+Lab2 
+1- kubectl get namespace
+  NAME                   STATUS   AGE
+default                Active   15h
+kube-node-lease        Active   15h
+kube-public            Active   15h
+kube-system            Active   15h
+kubernetes-dashboard   Active   48m
+
+
+2-kubectl get pods --namespace=kube-system
+
+5- node-role.kubernetes.io/master:NoSchedule
