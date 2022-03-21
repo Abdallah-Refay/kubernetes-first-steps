@@ -1,0 +1,27 @@
+1- kubectl get daemonsets --all-namespaces
+NAMESPACE     NAME         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+kube-system   kindnet      2         2         2       2            2           <none>                   23h
+kube-system   kube-proxy   2         2         2       2            2           kubernetes.io/os=linux   39h
+
+2- kubectl get daemonsets --namespace=kube-system
+NAME         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+kindnet      2         2         2       2            2           <none>                   23h
+kube-proxy   2         2         2       2            2           kubernetes.io/os=linux   39h
+
+3- kubectl describe daemonsets kube-proxy --namespace=kube-system | grep Image
+Image: k8s.gcr.io/kube-proxy:v1.23.3
+
+4- list daemonset after deployment 
+   kubectl get daemonsets --namespace=kube-system
+    NAME            DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+    elasticsearch   2         2         0       2            0           <none>                   74s
+    kindnet         2         2         2       2            2           <none>                   23h
+    kube-proxy      2         2         2       2            2           kubernetes.io/os=linux   39h
+
+8-kubectl exec -i -t test-pod --container test-pod -- /bin/bash
+  get the service ip first => kubectl get services
+NAME              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+backend-service   ClusterIP    10.105.101.218   <none>        80:30008/TCP   6m52s
+kubernetes        ClusterIP   10.96.0.1        <none>        443/TCP        40h
+curl 10.105.101.218
+
