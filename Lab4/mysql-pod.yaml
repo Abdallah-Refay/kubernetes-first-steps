@@ -6,11 +6,9 @@ metadata:
     name: myapp
 spec:
   containers:
-  - name: myapp
-    image: <Image>
-    resources:
-      limits:
-        memory: "128Mi"
-        cpu: "500m"
-    ports:
-      - containerPort: <Port>
+    - name: myapp
+      image: mysql
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"

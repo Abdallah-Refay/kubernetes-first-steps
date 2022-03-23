@@ -8,6 +8,10 @@ spec:
   containers:
     - name: gold
       image: redis
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
   initContainers:
     - name: busybox
       image: busybox

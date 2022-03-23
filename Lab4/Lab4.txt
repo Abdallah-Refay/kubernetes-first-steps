@@ -15,4 +15,4 @@ Labels:       <none>
 7- because mysql image doesn't operate on the default access token
 13- /home/.kube 
 14- kubectl config view
-15- 
+
