@@ -1,0 +1,18 @@
+1- kubectl get configmaps
+NAME                DATA   AGE
+kube-root-ca.crt    1      5d1h
+
+
+4- kubectl get secrets --all-namespaces
+5- kubectl describe secrets/default-token-czt7s 
+Name:         default-token-czt7s
+Namespace:    default
+Labels:       <none>
+*Annotations:  kubernetes.io/service-account.name: default
+              kubernetes.io/service-account.uid: 540adcbf-9161-4cee-a0e6-c5bdb969e4e4
+
+6-mysql 0/1     CrashLoopBackOff   4 (85s ago)   3m53s
+7- because mysql image doesn't operate on the default access token
+13- /home/.kube 
+14- kubectl config view
+15- 

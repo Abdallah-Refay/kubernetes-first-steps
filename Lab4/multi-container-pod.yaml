@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: red
+  labels:
+    name: multi-container
+spec:
+  containers:
+    - name: gold
+      image: redis
+  initContainers:
+    - name: busybox
+      image: busybox
+      command: ["sh", "-c", "echo Sleep && sleep 200"]
